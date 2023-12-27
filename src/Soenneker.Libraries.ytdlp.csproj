@@ -8,12 +8,12 @@
     </PropertyGroup>
 
     <PropertyGroup>
-        <Description>Simply adds the yt-dlp nightly Windows executable</Description>
+        <Description>Simply adds the yt-dlp nightly Windows executable, updated daily (if available)</Description>
         <Version Condition="'$(BUILD_VERSION)' == ''">2.1.0</Version>
         <Version Condition="'$(BUILD_VERSION)' != ''">$(BUILD_VERSION)</Version>
         <AssemblyName>Soenneker.Libraries.ytdlp</AssemblyName>
         <PackageId>Soenneker.Libraries.ytdlp</PackageId>
-        <PackageTags>libraries ytdlp ffmpeg youtube-dl youtube c# .net csharp dotnet</PackageTags>
+        <PackageTags>libraries ytdlp ffmpeg youtube-dl youtube c# .net csharp dotnet binary</PackageTags>
         <Copyright>Copyright © 2023 Jake Soenneker</Copyright>
         <Authors>Jake Soenneker</Authors>
         <Company>https://soenneker.com</Company>
@@ -37,6 +37,8 @@
         <None Include="..\README.md" Pack="true" PackagePath="\" />
         <None Include="..\LICENSE" Pack="true" PackagePath="\" />
         <None Include="..\icon.png" Pack="true" PackagePath="\" />
-        <Content Include="Resources\yt-dlp.exe" Pack="true" PackageCopyToOutput="true" />
+        <Content Include="Resources\yt-dlp.exe" Pack="true" PackageCopyToOutput="true">
+          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
     </ItemGroup>
 </Project>
