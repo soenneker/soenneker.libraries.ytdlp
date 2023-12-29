@@ -38,7 +38,6 @@
         <None Include="..\LICENSE" Pack="true" PackagePath="\" />
         <None Include="..\icon.png" Pack="true" PackagePath="\" />
         <Content Include="Resources\yt-dlp.exe" Pack="true" PackageCopyToOutput="true">
-          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </Content>
     </ItemGroup>
 </Project>
