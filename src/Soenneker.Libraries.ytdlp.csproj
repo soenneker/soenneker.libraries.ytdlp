@@ -23,8 +23,8 @@
         <SymbolPackageFormat>snupkg</SymbolPackageFormat>
         <IsPackable>true</IsPackable>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
-        <PackageProjectUrl>https://github.com/soenneker/{package-secretName}</PackageProjectUrl>
-        <RepositoryUrl>https://github.com/soenneker/{package-secretName}</RepositoryUrl>
+        <PackageProjectUrl>https://github.com/soenneker/soenneker.libraries.ytdlp</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/soenneker/soenneker.libraries.ytdlp</RepositoryUrl>
         <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
         <PublishRepositoryUrl>true</PublishRepositoryUrl>
         <LangVersion>latest</LangVersion>
