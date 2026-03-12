@@ -27,7 +27,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\..\src\Soenneker.Libraries.ytdlp.csproj" />
+        <ProjectReference Include="..\..\src\Soenneker.Libraries.ytdlp\Soenneker.Libraries.ytdlp.csproj" />
     </ItemGroup>
 
     <ItemGroup>
