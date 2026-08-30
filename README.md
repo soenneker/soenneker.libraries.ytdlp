@@ -5,7 +5,7 @@
 
 # Soenneker.Libraries.ytdlp
 
-Simply adds the yt-dlp nightly Windows executable, updated daily (if available).
+The yt-dlp Windows executable packaged as a .NET content asset.
 
 ## Install
 
@@ -13,11 +13,23 @@ Simply adds the yt-dlp nightly Windows executable, updated daily (if available).
 dotnet add package Soenneker.Libraries.ytdlp
 ```
 
-## What it provides
+The package copies the executable beneath the application output directory:
 
-- Simply adds the yt-dlp nightly Windows executable, updated daily (if available).
-- The file is copied to the output directory, and located at the relative path: `Resources\yt-dlp.exe`.
+```csharp
+string ytdlp = Path.Combine(AppContext.BaseDirectory, "Resources", "yt-dlp.exe");
 
-## How to use it
+var startInfo = new ProcessStartInfo(ytdlp)
+{
+    RedirectStandardOutput = true,
+    RedirectStandardError = true,
+    UseShellExecute = false
+};
 
-After installation, resolve the packaged file from the output-relative path above. The package deploys the asset but does not invoke it for you.
+startInfo.ArgumentList.Add("--dump-single-json");
+startInfo.ArgumentList.Add("--no-download");
+startInfo.ArgumentList.Add(mediaUrl);
+```
+
+Drain both redirected streams, wait for completion, and reject a non-zero exit code. Pass URLs, output templates, cookie paths, and other variable values through `ArgumentList`; never include cookies or credentials in logs.
+
+FFmpeg is required for many merge and post-processing operations and is not supplied by this package. Applications are responsible for setting time, output-size, and disk-space limits and for complying with the media provider's terms and applicable law.
